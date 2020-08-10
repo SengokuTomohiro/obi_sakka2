@@ -1,0 +1,2 @@
+class Catchcopy < ApplicationRecord
+end
