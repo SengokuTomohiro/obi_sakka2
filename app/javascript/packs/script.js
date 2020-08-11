@@ -6,7 +6,10 @@ $(function () {
       $bookList.empty();
       $.get('https://www.googleapis.com/books/v1/volumes', { q: searchKeyword, country: 'JP' }).then((books) => {
           books.items.map((book) => {
-            $bookList.append(`<input type= "radio" name= "book_name" value="${book.id}" >${book.volumeInfo.title}`);
+            let $bookItem = $('<div>');
+            $bookItem.append($('<input>', {type: 'radio', name: 'book_id', value: book.id }));
+            $bookItem.append(book.volumeInfo.title);
+            $bookList.append($bookItem);
             
               let params = {
                 book: {

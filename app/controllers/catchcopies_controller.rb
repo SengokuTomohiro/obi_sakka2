@@ -8,6 +8,9 @@ class CatchcopiesController < ApplicationController
     end    
     
     def create
+        @catchcopies= Catchcopy.new
+        
+            redirect_to '/'
     end
     
 end

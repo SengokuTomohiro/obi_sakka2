@@ -1,3 +1,3 @@
-class Catchcopy < 
-    belongs_to :books
+class Catchcopy < ApplicationRecord  
+    belongs_to :book
 end
