@@ -16,9 +16,10 @@
     <input type="text" id="bookTitle" placeholder="検索キーワードを入力">
     <input type="submit" value="検索">
   </form>
-   <ul class="book-list"id="bookList"></ul>
+
+  <%= form_for(@catchcopy) %>
+     <ul class="book-list id=""bookList><li></li></ul>
+  <% end %>   
   <%= javascript_pack_tag 'script' %>
-  
-   
   </body>
 </html>
