@@ -8,6 +8,8 @@ class CatchcopiesController < ApplicationController
     end    
     
     def create
+        # ここにcatchcopy作成の記述
+        redirect_to '/'
     end
     
 end
