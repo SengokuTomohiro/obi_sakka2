@@ -1,0 +1,7 @@
+<% if @user.catchcopies.any? %>
+    <h3>キャッチコピー (<%= @user.catchcopies.count %>)</h3>
+    <ol class="catchcopies">
+      <%= render @catchcopies %>
+    </ol>
+    <%= will_paginate @catchcopies %>
+  <% end %>

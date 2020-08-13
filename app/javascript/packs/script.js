@@ -11,13 +11,30 @@ $(function () {
             $bookItem.append(book.volumeInfo.title);
             $bookList.append($bookItem);
             
-              let params = {
-                book: {
-                  google_id: book.id,
-                  title: book.volumeInfo.title
-                }
+            let params;
+            if (book.volumeInfo.imageLinks) {
+              params = {
+                google_id: book.id,
+                title: book.volumeInfo.title,
+                description: book.volumeInfo.description,
+                image_url: book.volumeInfo.imageLinks.thumbnail,
               }
-              $.post('http://localhost:3000/books', params);
+            } else {
+              params = {
+                google_id: book.id,
+                title: book.volumeInfo.title,
+                description: book.volumeInfo.description,
+              }
+            }
+            $.ajax({
+              url: "/books",
+              method: "POST",
+              headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
+              },
+              data: params,
+              datatype: "json"
+            });
           });
       });
       $bookInput.val('');

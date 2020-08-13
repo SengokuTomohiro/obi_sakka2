@@ -1,16 +1,26 @@
 class CatchcopiesController < ApplicationController
     def index
         @catchcopies= Catchcopy.all
+        @book = Book.find(params[:id])
+        @catchcopies = @user.catchcopies.paginate(page: params[:page])
     end
 
     def new
-        @catchcopies= Catchcopy.new
+        @catchcopy= Catchcopy.new
     end    
     
     def create
-        @catchcopies= Catchcopy.new
+        @catchcopy= Catchcopy.new
+        if @catchcopy.save
+            redirect_to 'catchcopies/index'
+          else
+            redirect_to 'catchcopies/new'
+          end
         
-            redirect_to '/'
     end
     
+    private
+    def catchcopy_params
+        params.require(:catchcopy).permit(:content, :book_id)
+    end    
 end
