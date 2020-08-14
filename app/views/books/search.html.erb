@@ -5,9 +5,9 @@
   <input type="submit" value="検索">
 </form>
 </div>
-    <%= form_for(@book) do |f| %>
-  <ul class="book-list" id="bookList"></ul>
-  <div class="search-form">
-  <%= f.submit "投稿画面へ" %>
-  </div>
+  <%= form_tag('/catchcopies/new', method: :get) do  %>
+      <ul class="book-list" id="bookList"></ul>
+      <div class="search-form">
+      <input type="submit" value="投稿画面へ移動">
+      </div>
   <% end %>

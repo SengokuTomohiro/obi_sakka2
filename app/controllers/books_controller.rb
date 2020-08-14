@@ -1,13 +1,11 @@
 class BooksController < ApplicationController
+    def create   
+        @book= Book.find_or_create_by(book_params)
+    end  
+    
     def search
-        @book= Book.new
     end 
     
-    def create   
-        @book = Book.new(book_params)
-        @book.save
-        redirect_to 'catchcopies/new'
-    end  
 
     def show
         
