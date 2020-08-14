@@ -1,10 +1,8 @@
 <% @catchcopy = Catchcopy.new unless @cathcopy %>
-<%= form_for(@catchcopy, url: catchcopies_path, method: :post) do |f| %>
-  <h2>本のキャッチコピー</h2>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "投稿を入力" %>
-  </div>
-  <%= f.submit '投稿' %>
+<%= form_for @catchcopy do |f| %>
+  <%= f.hidden_field :book_id, value: @book.id %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
 <% end %>
 
 

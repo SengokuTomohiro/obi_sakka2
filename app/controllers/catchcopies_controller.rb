@@ -1,32 +1,25 @@
 class CatchcopiesController < ApplicationController
-    before_action :set_book_id
-
-    def new
-        @catchcopy= Catchcopy.new  
+    def index
+        @catchcopies = Catchcopy.all
     end    
+
+    def new 
+        @book = Book.find_by(google_id: params[:book_id])
+        @catchcopy = Catchcopy.new
+    end 
     
     def create
-        @catchcopy = Catchcopy.new(
-            content: params[:content],
-            book_id: @book_id
-          )
+        @catchcopy = Catchcopy.new(catchcopy_parameter)
         if @catchcopy.save
-          render 'index'
+            render 'index'
         else
-          render 'new'
+            redirect_to '/catchcopies/new'
         end
     end
-
-    def index
-        @catchcopies= Catchcopy.all
-    end
-
-    private
-    def catchcopy_params
-        params.require(:catchcopy).permit(:content,:book_id)
-    end     
     
-    def set_book_id
-        @book_id = Book.find_by(id: params[:id])
+    private
+    def catchcopy_parameter
+        params.require(:catchcopy).permit(:content, :book_id)
     end
-end
+
+end    
