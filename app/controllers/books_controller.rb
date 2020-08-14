@@ -8,7 +8,6 @@ class BooksController < ApplicationController
     
 
     def show
-        
     end
 
     private

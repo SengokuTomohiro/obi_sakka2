@@ -1,9 +1,12 @@
+<body>
 <% @catchcopy = Catchcopy.new unless @cathcopy %>
+<h1>本のキャッチコピー</h1>
 <%= form_for @catchcopy do |f| %>
   <%= f.hidden_field :book_id, value: @book.id %>
   <%= f.text_area :content %>
-  <%= f.submit %>
+  <%= f.submit "投稿" %>
 <% end %>
+</body>
 
 
 

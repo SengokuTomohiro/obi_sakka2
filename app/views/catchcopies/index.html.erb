@@ -1,8 +1,10 @@
  <h1>投稿一覧</h1>
- <ul>
-    <% @catchcopies.each do |catchcopy| %>
-       <li><%= catchcopy.content %></li>
-       <img src="<%= catchcopy.book.image_url %>">
-       <a href="/books/<%= catchcopy.book.id %>/show">この本を見に行く</a>
-    <% end %>
- </ul>   
+<% @catchcopies.each do |catchcopy| %>
+<ul>
+    <li><%= catchcopy.content %>
+    <%= catchcopy.book.title%>
+    <img src="<%= catchcopy.book.image_url%>">
+    <a href= "/books/<%= catchcopy.book.id%>/show">この本を見に行く</a>
+    </li>
+</ul>    
+<% end %>

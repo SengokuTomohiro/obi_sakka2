@@ -11,7 +11,7 @@ class CatchcopiesController < ApplicationController
     def create
         @catchcopy = Catchcopy.new(catchcopy_parameter)
         if @catchcopy.save
-            render 'index'
+            redirect_to '/catchcopies'
         else
             redirect_to '/catchcopies/new'
         end
