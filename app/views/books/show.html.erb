@@ -1,0 +1,8 @@
+<%= @book.title %>
+<%= @book.description %>
+<img src="<%= @book.image_url%>">
+
+<% @catchcopies.each do |catchcopy| %>
+<li><%= catchcopy.content %></li>
+<% end %>
+
