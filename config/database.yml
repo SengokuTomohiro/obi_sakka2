@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: obi_sakka2_production
   username: obi_sakka2
   password: <%= ENV['OBI_SAKKA2_DATABASE_PASSWORD'] %>
+  
