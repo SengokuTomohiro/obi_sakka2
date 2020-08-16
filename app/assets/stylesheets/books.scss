@@ -6,7 +6,7 @@ body{
     background-color: yellowgreen;
     font-size: 20px;
     font-family: serif;
-    margin-top: 120px;
+    margin-top: 50px;
 }
 
 .search-form{
@@ -16,6 +16,24 @@ body{
 .book-list{
     margin-left: 300px;
 }
+
+.show-content{
+    display: inline-block;
+    margin-left: 120px;
+}
+
+.show-description{
+    background-color: whitesmoke;
+    font-family: serif;
+    width: 580px;
+}
+
+
+img{
+    width: 260px;
+    height: auto;
+}
+
 
 
 

@@ -1,10 +1,10 @@
- <h1>投稿一覧</h1>
+ <h1 class="index-title">投稿一覧</h1>
 <% @catchcopies.each do |catchcopy| %>
 <ul>
-    <li><%= catchcopy.content %>
-    <%= catchcopy.book.title%>
-    <img src="<%= catchcopy.book.image_url%>">
-    <a href= "/books/<%= catchcopy.book.id%>">書籍の確認</a>
-    </li>
-</ul>    
+  <li class="index-content">
+   <h2><%= catchcopy.content %></h2>
+   <h3><%= catchcopy.book.title%></h3>
+   <a href= "/books/<%= catchcopy.book.id%>">書籍の確認</a>
+  </li>
+</ul> 
 <% end %>

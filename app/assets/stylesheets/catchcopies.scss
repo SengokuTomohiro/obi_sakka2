@@ -1,3 +1,24 @@
 // Place all the styles related to the Catchcopies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.catchcopy-new-form{
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+    width:651px;
+    height:80px;
+    font-size:x-large;
+    font-family: serif;
+  }
+
+
+.index-title{
+    text-align: center;
+    background-color: whitesmoke;
+}  
+
+.index-content{
+    margin-left: 50px;
+}
