@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_122135) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id", "created_at"], name: "index_catchcopies_on_book_id_and_created_at"
+    t.index ["book_id"], name: "index_catchcopies_on_book_id"
   end
 
 end

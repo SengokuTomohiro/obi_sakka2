@@ -1,15 +1,14 @@
 class BooksController < ApplicationController
-    def create   
-        @book= Book.find_or_create_by(book_params)
+    def create  
+        @book= Book.find_or_create_by(book_params)    
     end  
     
-    def search
+    def search       
     end 
     
-
     def show
         @book = Book.find(params[:id])
-        @catchcopies = @book.catchcopies
+        @catchcopies = @book.catchcopies     
     end
 
     private

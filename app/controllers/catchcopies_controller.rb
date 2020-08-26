@@ -5,7 +5,11 @@ class CatchcopiesController < ApplicationController
 
     def new 
         @book = Book.find_by(google_id: params[:book_id])
-        @catchcopy = Catchcopy.new
+        if @book
+        @catchcopy = Catchcopy.new  
+        else
+            render 'books/search'
+        end     
     end 
     
     def create
